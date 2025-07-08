@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# 获取应用包路径
+APP_PATH="$(dirname "$0")/../.."
+RESOURCES_PATH="$APP_PATH/Contents/Resources"
+
+# 切换到资源目录
+cd "$RESOURCES_PATH"
+
+# 启动Python应用
+python3 gui_app.py
