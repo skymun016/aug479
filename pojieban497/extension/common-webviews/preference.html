@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preference</title>
+    <script nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+/**
+ * Monaco bootstrap script
+ *
+ * This script is included directly in HTML files to load Monaco editor.
+ * It's kept as a simple JS file to avoid any build/transpilation requirements.
+ */
+
+// Define the Monaco CDN version
+const MONACO_VERSION = "0.52.2";
+const MONACO_CDN_BASE = `https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/${MONACO_VERSION}/min`;
+
+// Initialize augmentDeps if it doesn't exist
+window.augmentDeps = window.augmentDeps || {};
+
+// Create a promise that will resolve when Monaco is ready
+let monacoResolve;
+window.augmentDeps.monaco = new Promise((resolve) => {
+  monacoResolve = resolve;
+});
+
+// If Monaco is already loaded, don't load it again
+if (window.monaco) {
+  console.log("Monaco already loaded, skipping bootstrap");
+  initializeMonacoDeps();
+} else {
+  // Load the Monaco loader script
+  const loaderScript = document.createElement("script");
+  loaderScript.src = `${MONACO_CDN_BASE}/vs/loader.min.js`;
+  loaderScript.onload = initializeMonaco;
+  document.head.appendChild(loaderScript);
+}
+
+// Initialize Monaco after the loader script has loaded
+function initializeMonaco() {
+  // require is provided by loader.min.js
+  require.config({
+    paths: { vs: `${MONACO_CDN_BASE}/vs` },
+  });
+
+  require(["vs/editor/editor.main"], () => {
+    initializeMonacoDeps();
+  });
+}
+
+// Initialize Monaco dependencies after Monaco has loaded
+function initializeMonacoDeps() {
+  // Resolve the monaco promise
+  if (monacoResolve) {
+    monacoResolve(window.monaco);
+  }
+}
+
+</script>
+    <meta property="csp-nonce" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <script type="module" crossorigin src="./assets/preference-xhnU5d7W.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ=="></script>
+    <link rel="modulepreload" crossorigin href="./assets/SpinnerAugment-CCR7AGk-.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/IconButtonAugment-CVWbWfwx.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/async-messaging-BnYTstSc.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/message-broker-D_dlQCzo.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/TextTooltipAugment-QVDAcl-O.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/CardAugment-Cjl8BxE0.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/BaseTextInput-BomIiYnE.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/index-DaLJ_QUV.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/types-CGlLNakm.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/file-paths-BhRi9crS.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/chevron-down-Di3C5ykp.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/CalloutAugment-D1eOn47Z.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/folder-opened-D6WrI8wv.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/index-B60hMJvm.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/preload-helper-Dv6uf1Os.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/LanguageIcon-7PvQ76S5.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/index-DJGUS2rb.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/diff-utils-C44al88x.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/keypress-DD1aQVr0.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/await_block-B-Au3vut.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/types-DDm27S8B.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/utils-DRvqjT1k.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/ra-diff-ops-model-CfFedGkc.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/chat-context-CfYmajw8.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/CollapseButtonAugment-DvFOUTxy.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/ButtonAugment-JhlUwgSi.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/mcp-logo-CwhjBp6K.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/MaterialIcon-BiH6zpoH.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/copy-CzH8IZOA.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/CopyButton-COVKPqeG.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/ellipsis-DUJFhkV3.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/next-edit-types-904A5ehg.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/IconFilePath-C7r3gamb.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/Filespan-Dq3a1CK8.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/terminal-CqA-6nrc.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/pen-to-square-CrZjDplM.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/augment-logo-Bf5bIaNf.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/TextAreaAugment-20MWk3hd.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="modulepreload" crossorigin href="./assets/AugmentMessage-DFC62z0i.js" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/SpinnerAugment-DnPofOlT.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/IconButtonAugment-Bjt0RBxO.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/AugmentMessage-aRc2it8e.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/index-McRKs1sU.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/index-BYh6wkDD.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/TextTooltipAugment-BiroygYm.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/CardAugment-BuBr3xQZ.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/BaseTextInput-DuK8hbkY.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/CalloutAugment-Dvw-pMXw.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/folder-opened-hTsrGIsd.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/diff-utils-DTcQ2vsq.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/LanguageIcon-CbFzDG5Z.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/CollapseButtonAugment-CLLTFP8m.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/ButtonAugment-zn72hvQy.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/MaterialIcon-BO_oU5T3.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/CopyButton-B0_wR17F.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/copy-Do68LBjG.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/IconFilePath-CiKel2Kp.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/Filespan-uhpSTama.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/TextAreaAugment-J75lFxU7.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+    <link rel="stylesheet" crossorigin href="./assets/preference-xgEAB3qZ.css" nonce="nonce-mKyCCF2Y3Tfxc2+LAop4SQ==">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
